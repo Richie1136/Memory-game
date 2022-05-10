@@ -1,0 +1,16 @@
+#grid {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+h3 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32px;
+}
