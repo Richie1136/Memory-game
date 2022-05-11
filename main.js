@@ -57,15 +57,30 @@ console.log(cardArray)
 let grid = document.querySelector('#grid')
 
 let chosenCards = []
+let chosenCardsID = []
+
+const checkMatch = () => {
+  let cards = document.querySelectorAll('#grid img')
+  score = 0
+  console.log("Check for match")
+  if (chosenCards[0] === chosenCards[1]) {
+    alert("You found a match")
+    cards[chosenCardsID[0]].setAttribute('src', './images/white.png')
+  }
+}
 
 function flipCard() {
-  console.log(cardArray)
   let cardId = this.getAttribute('data-id')
   chosenCards.push(cardArray[cardId].name)
+  chosenCardsID.push(cardId)
   console.log(chosenCards)
-  console.log("Clicked", cardId)
+  console.log(chosenCardsID)
   let result = this.setAttribute('src', cardArray[cardId].img)
-  console.log(result)
+  if (chosenCards.length === 2) {
+    setTimeout(() => {
+      checkMatch()
+    }, 500);
+  }
 }
 
 
@@ -75,7 +90,6 @@ const createBoard = () => {
     card.setAttribute('src', './images/blank.png')
     card.setAttribute('data-id', i)
     card.addEventListener('click', flipCard)
-    console.log(card)
     grid.appendChild(card)
   }
 }
