@@ -2,51 +2,51 @@
 const cardArray = [
   {
     name: 'fries',
-    img: './images/fries'
+    img: './images/fries.png'
   },
   {
     name: 'milkshake',
-    img: './images/milkshake'
+    img: './images/milkshake.png'
   },
   {
     name: 'hotdog',
-    img: './images/hotdog'
+    img: './images/hotdog.png'
   },
   {
     name: 'cheeseburger',
-    img: './images/cheeseburger'
+    img: './images/cheeseburger.png'
   },
   {
     name: 'pizza',
-    img: './images/pizza'
+    img: './images/pizza.png'
   },
   {
     name: 'icecream',
-    img: './images/ice-cream'
+    img: './images/ice-cream.png'
   },
   {
     name: 'fries',
-    img: './images/fries'
+    img: './images/fries.png'
   },
   {
     name: 'milkshake',
-    img: './images/milkshake'
+    img: './images/milkshake.png'
   },
   {
     name: 'hotdog',
-    img: './images/hotdog'
+    img: './images/hotdog.png'
   },
   {
     name: 'cheeseburger',
-    img: './images/cheeseburger'
+    img: './images/cheeseburger.png'
   },
   {
     name: 'pizza',
-    img: './images/pizza'
+    img: './images/pizza.png'
   },
   {
     name: 'icecream',
-    img: './images/ice-cream'
+    img: './images/ice-cream.png'
   },
 ]
 
@@ -64,6 +64,8 @@ function flipCard() {
   chosenCards.push(cardArray[cardId].name)
   console.log(chosenCards)
   console.log("Clicked", cardId)
+  let result = this.setAttribute('src', cardArray[cardId].img)
+  console.log(result)
 }
 
 
