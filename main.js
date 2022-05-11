@@ -56,8 +56,13 @@ console.log(cardArray)
 
 let grid = document.querySelector('#grid')
 
+let chosenCards = []
+
 function flipCard() {
+  console.log(cardArray)
   let cardId = this.getAttribute('data-id')
+  chosenCards.push(cardArray[cardId].name)
+  console.log(chosenCards)
   console.log("Clicked", cardId)
 }
 
