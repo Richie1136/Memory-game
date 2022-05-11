@@ -66,6 +66,10 @@ const checkMatch = () => {
   if (chosenCards[0] === chosenCards[1]) {
     alert("You found a match")
     cards[chosenCardsID[0]].setAttribute('src', './images/white.png')
+    cards[chosenCardsID[1]].setAttribute('src', './images/white.png')
+    cards[chosenCardsID[0]].removeEventListener('click', flipCard)
+    cards[chosenCardsID[1]].removeEventListener('click', flipCard)
+
   }
 }
 
