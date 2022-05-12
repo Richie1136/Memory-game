@@ -58,19 +58,29 @@ let grid = document.querySelector('#grid')
 
 let chosenCards = []
 let chosenCardsID = []
+let cardsWon = []
 
 const checkMatch = () => {
+  let optioneOneId = chosenCardsID[0]
+  let optioneTwoId = chosenCardsID[1]
   let cards = document.querySelectorAll('#grid img')
   score = 0
+
+  if (optioneOneId === optioneTwoId) {
+    alert("You clicked the same card")
+  }
+
   console.log("Check for match")
   if (chosenCards[0] === chosenCards[1]) {
     alert("You found a match")
-    cards[chosenCardsID[0]].setAttribute('src', './images/white.png')
-    cards[chosenCardsID[1]].setAttribute('src', './images/white.png')
-    cards[chosenCardsID[0]].removeEventListener('click', flipCard)
-    cards[chosenCardsID[1]].removeEventListener('click', flipCard)
-
+    cards[optioneOneId].setAttribute('src', './images/white.png')
+    cards[optioneTwoId].setAttribute('src', './images/white.png')
+    cards[optioneOneId].removeEventListener('click', flipCard)
+    cards[optioneTwoId].removeEventListener('click', flipCard)
+    cardsWon.push(chosenCards)
   }
+  chosenCards = []
+  chosenCardsID = []
 }
 
 function flipCard() {
